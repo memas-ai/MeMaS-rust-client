@@ -41,7 +41,7 @@ No authorization required
 
 ## remember
 
-> crate::models::Remember200Response remember(cited_document)
+> crate::models::Remember200Response remember(remember_request)
 Memorize information
 
 Memorize information
@@ -51,7 +51,7 @@ Memorize information
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**cited_document** | [**CitedDocument**](CitedDocument.md) | Remember the following information | [required] |
+**remember_request** | [**RememberRequest**](RememberRequest.md) | Request object for remembering a document | [required] |
 
 ### Return type
 

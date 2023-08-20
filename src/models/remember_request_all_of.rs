@@ -12,19 +12,16 @@
 
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
-pub struct RecollectRequest {
-    #[serde(rename = "clue")]
-    pub clue: String,
+pub struct RememberRequestAllOf {
     /// Full name of a corpus, specifying which namespace the corpus is under.  The name takes on the format of \\\"<namespace_pathname>:<corpus_name>\\\"
-    #[serde(rename = "corpus_pathname")]
-    pub corpus_pathname: String,
+    #[serde(rename = "corpus_pathname", skip_serializing_if = "Option::is_none")]
+    pub corpus_pathname: Option<String>,
 }
 
-impl RecollectRequest {
-    pub fn new(clue: String, corpus_pathname: String) -> RecollectRequest {
-        RecollectRequest {
-            clue,
-            corpus_pathname,
+impl RememberRequestAllOf {
+    pub fn new() -> RememberRequestAllOf {
+        RememberRequestAllOf {
+            corpus_pathname: None,
         }
     }
 }

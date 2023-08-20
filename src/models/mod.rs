@@ -6,3 +6,7 @@ pub mod recollect_request;
 pub use self::recollect_request::RecollectRequest;
 pub mod remember_200_response;
 pub use self::remember_200_response::Remember200Response;
+pub mod remember_request;
+pub use self::remember_request::RememberRequest;
+pub mod remember_request_all_of;
+pub use self::remember_request_all_of::RememberRequestAllOf;

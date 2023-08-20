@@ -1,7 +1,7 @@
 /*
  * MeMaS DP APIs
  *
- * This is the Data Plane APIs for MeMaS (Memory Management Service).
+ * This is the Data Plane client for MeMaS (Memory Management Service).  See https://github.com/memas-ai/MeMaS for more details.
  *
  * The version of the OpenAPI document: 0.1.0
  * Contact: max.yu@memas.ai
@@ -60,7 +60,7 @@ pub async fn recollect(configuration: &configuration::Configuration, recollect_r
 }
 
 /// Memorize information
-pub async fn remember(configuration: &configuration::Configuration, cited_document: crate::models::CitedDocument) -> Result<crate::models::Remember200Response, Error<RememberError>> {
+pub async fn remember(configuration: &configuration::Configuration, remember_request: crate::models::RememberRequest) -> Result<crate::models::Remember200Response, Error<RememberError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -71,7 +71,7 @@ pub async fn remember(configuration: &configuration::Configuration, cited_docume
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
-    local_var_req_builder = local_var_req_builder.json(&cited_document);
+    local_var_req_builder = local_var_req_builder.json(&remember_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;

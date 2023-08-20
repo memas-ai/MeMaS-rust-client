@@ -12,18 +12,22 @@
 
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
-pub struct CitedDocument {
+pub struct RememberRequest {
     #[serde(rename = "document")]
     pub document: String,
     #[serde(rename = "citation")]
     pub citation: Box<crate::models::Citation>,
+    /// Full name of a corpus, specifying which namespace the corpus is under.  The name takes on the format of \\\"<namespace_pathname>:<corpus_name>\\\"
+    #[serde(rename = "corpus_pathname", skip_serializing_if = "Option::is_none")]
+    pub corpus_pathname: Option<String>,
 }
 
-impl CitedDocument {
-    pub fn new(document: String, citation: crate::models::Citation) -> CitedDocument {
-        CitedDocument {
+impl RememberRequest {
+    pub fn new(document: String, citation: crate::models::Citation) -> RememberRequest {
+        RememberRequest {
             document,
             citation: Box::new(citation),
+            corpus_pathname: None,
         }
     }
 }
