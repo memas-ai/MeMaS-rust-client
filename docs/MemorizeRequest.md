@@ -1,4 +1,4 @@
-# RememberRequest
+# MemorizeRequest
 
 ## Properties
 

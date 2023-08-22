@@ -12,15 +12,15 @@
 
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
-pub struct RememberRequestAllOf {
+pub struct MemorizeRequestAllOf {
     /// Full name of a corpus, specifying which namespace the corpus is under.  The name takes on the format of \\\"<namespace_pathname>:<corpus_name>\\\"
     #[serde(rename = "corpus_pathname", skip_serializing_if = "Option::is_none")]
     pub corpus_pathname: Option<String>,
 }
 
-impl RememberRequestAllOf {
-    pub fn new() -> RememberRequestAllOf {
-        RememberRequestAllOf {
+impl MemorizeRequestAllOf {
+    pub fn new() -> MemorizeRequestAllOf {
+        MemorizeRequestAllOf {
             corpus_pathname: None,
         }
     }

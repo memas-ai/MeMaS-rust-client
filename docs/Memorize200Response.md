@@ -1,4 +1,4 @@
-# Remember200Response
+# Memorize200Response
 
 ## Properties
 

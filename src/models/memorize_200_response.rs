@@ -12,14 +12,14 @@
 
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
-pub struct Remember200Response {
+pub struct Memorize200Response {
     #[serde(rename = "success", skip_serializing_if = "Option::is_none")]
     pub success: Option<bool>,
 }
 
-impl Remember200Response {
-    pub fn new() -> Remember200Response {
-        Remember200Response {
+impl Memorize200Response {
+    pub fn new() -> Memorize200Response {
+        Memorize200Response {
             success: None,
         }
     }
