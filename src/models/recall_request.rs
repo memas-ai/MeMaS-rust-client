@@ -15,16 +15,16 @@
 pub struct RecallRequest {
     #[serde(rename = "clue")]
     pub clue: String,
-    /// Full name of a corpus, specifying which namespace the corpus is under.  The name takes on the format of \\\"<namespace_pathname>:<corpus_name>\\\"
-    #[serde(rename = "corpus_pathname")]
-    pub corpus_pathname: String,
+    /// Full namespace name, where child namespaces are appended after their parents' names with '.'
+    #[serde(rename = "namespace_pathname")]
+    pub namespace_pathname: String,
 }
 
 impl RecallRequest {
-    pub fn new(clue: String, corpus_pathname: String) -> RecallRequest {
+    pub fn new(clue: String, namespace_pathname: String) -> RecallRequest {
         RecallRequest {
             clue,
-            corpus_pathname,
+            namespace_pathname,
         }
     }
 }
