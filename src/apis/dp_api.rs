@@ -19,6 +19,7 @@ use super::{Error, configuration};
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum MemorizeError {
+    Status400(crate::models::Memorize400Response),
     UnknownValue(serde_json::Value),
 }
 
@@ -26,6 +27,7 @@ pub enum MemorizeError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum RecallError {
+    Status400(crate::models::Memorize400Response),
     UnknownValue(serde_json::Value),
 }
 
