@@ -5,7 +5,7 @@ All URIs are relative to *http://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**memorize**](DpApi.md#memorize) | **POST** /dp/memorize | Memorize information
-[**recall**](DpApi.md#recall) | **POST** /dp/recall | Recalls information
+[**recall**](DpApi.md#recall) | **GET** /dp/recall | Recalls information
 
 
 
@@ -21,7 +21,7 @@ Memorize information
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**memorize_request** | [**MemorizeRequest**](MemorizeRequest.md) | Request object for memorizing a document | [required] |
+**memorize_request** | [**MemorizeRequest**](MemorizeRequest.md) |  | [required] |
 
 ### Return type
 
